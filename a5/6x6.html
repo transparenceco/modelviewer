@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ModelViewer and Pico CSS</title>
+    <meta name="description" content="A classic company or blog layout with a sidebar. Built with Pico CSS.">
+    <!-- Pico.css -->
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <!-- Custom styles for this example -->
+    <link rel="stylesheet" href="custom.css">
+  </head>
+
+  <body>
+
+
+    <!-- Hero -->
+    <div class="hero" data-theme="dark">
+
+      <nav class="container-fluid">
+        <ul>
+          <li><a href="./" class="contrast" onclick="event.preventDefault()"><strong>Transparence</strong></a></li>
+        </ul>
+        <ul>
+        </ul>
+      </nav>
+      <header class="container">
+        <hgroup>
+          <h1>Modelviewer meets Pico CSS</h1>
+          <h2>An experiment bringing 3D to websites with minimal code.</h2>
+        </hgroup>
+      </header>
+    </div><!-- ./ Hero -->
+
+    <!-- Main -->
+    <main class="container">
+     
+     
+        <div class="grid">
+            <div>
+                    <model-viewer style="min-height: 400px;" src="cubes.glb" disable-zoom auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+            </div>
+            <div>
+                    <model-viewer style="min-height: 400px;" src="cubes.glb" disable-zoom auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+            </div>
+            <div>
+                <model-viewer style="min-height: 400px;" src="cubes.glb" disable-zoom auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+        </div>
+        </div>
+
+
+
+        <div class="grid">
+            <div>
+                    <model-viewer style="min-height: 400px;" src="cubes.glb" disable-zoom auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+            </div>
+            <div>
+                    <model-viewer style="min-height: 400px;" src="cubes.glb" disable-zoom auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+            </div>
+            <div>
+                <model-viewer style="min-height: 400px;" src="cubes.glb" disable-zoom auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+        </div>
+        </div>
+   
+    </main><!-- ./ Main -->
+
+    <!-- Footer -->
+    <footer class="container">
+      <small>Built by Transparence</a></small>
+    </footer><!-- ./ Footer -->
+
+    <!-- Minimal theme switcher -->
+    <script src="../js/minimal-theme-switcher.js"></script>
+
+  </body>
+
+</html>

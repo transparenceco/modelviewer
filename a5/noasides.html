@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ModelViewer and Pico CSS</title>
+    <meta name="description" content="A classic company or blog layout with a sidebar. Built with Pico CSS.">
+    <!-- Pico.css -->
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <!-- Custom styles for this example -->
+    <link rel="stylesheet" href="custom.css">
+  </head>
+
+  <body>
+
+
+    <!-- Hero -->
+    <div class="hero" data-theme="dark">
+
+      <nav class="container-fluid">
+        <ul>
+          <li><a href="./" class="contrast" onclick="event.preventDefault()"><strong>Transparence</strong></a></li>
+        </ul>
+        <ul>
+        </ul>
+      </nav>
+      <header class="container">
+        <hgroup>
+          <h1>Modelviewer meets Pico CSS</h1>
+          <h2>An experiment bringing 3D to websites with minimal code.</h2>
+        </hgroup>
+      </header>
+    </div><!-- ./ Hero -->
+
+    <!-- Main -->
+    <main class="container">
+     
+
+          <hgroup>
+            <h2>Example of a simple 3D model</h2>
+            <h3>Models</h3>
+          </hgroup>
+          <p>This model is wrapped in a figure:</p>
+
+        <figure>
+ 
+            <model-viewer style="width:100%;min-height: 400px;" src="cubes.glb" disable-zoom auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+            <figcaption>Example of an image on a post</a></figcaption>
+
+        </figure>
+
+        <hgroup>
+            <h2>Example of models inside containers with zero padding.</h2>
+
+            <article class="article3d" data-theme="dark">
+                <model-viewer style="width:100%;height: 500px;" src="cubes.glb" disable-zoom auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+            </article>
+
+            <h2>Example of models inside grids.</h2>
+            <p>I'm not entirely sure why the odd sizing</p>
+
+        <div class="grid">
+            <div>
+                <article class="article3d" data-theme="dark">
+                    <model-viewer style="width:100%;min-height: 400px;" src="cubes.glb" disable-zoom auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+                </article>
+            </div>
+            <div>
+                <article class="article3d" data-theme="dark">
+                    <model-viewer style="width:100%;min-height: 400px;" src="cubes.glb" disable-zoom auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+                </article>
+            </div>
+        </div>
+        
+        <article class="article3d">
+            <model-viewer src="cubes.glb" id="orbit-demo" interpolation-decay="200" ></model-viewer>
+        <script>
+        (() => {
+          const modelViewer = document.querySelector('#orbit-demo');
+          const orbitCycle = [
+            '45deg 55deg 4m',
+            '-60deg 110deg 2m',
+            modelViewer.cameraOrbit
+          ];
+        
+          setInterval(() => {
+            const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
+            modelViewer.cameraOrbit =
+                orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
+          }, 3000);
+        })();
+        </script>
+        </article>
+
+        
+        <article class="article3d" data-theme="dark">
+            <model-viewer src="cubes.glb" id="orbit-demo2" interpolation-decay="200" ></model-viewer>
+        <script>
+        (() => {
+          const modelViewer = document.querySelector('#orbit-demo2');
+          const orbitCycle = [
+            '45deg 55deg 4m',
+            '-60deg 110deg 2m',
+            modelViewer.cameraOrbit
+          ];
+        
+          setInterval(() => {
+            const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
+            modelViewer.cameraOrbit =
+                orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
+          }, 3000);
+        })();
+        </script>
+        </article>
+
+
+
+        <div class="grid">
+            <div>
+                    <model-viewer style="width:100%;min-height: 400px;" src="cubes.glb" disable-zoom auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+            </div>
+            <div>
+                    <model-viewer style="width:100%;min-height: 400px;" src="cubes.glb" disable-zoom auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+            </div>
+            <div>
+                <model-viewer style="width:100%;min-height: 400px;" src="cubes.glb" disable-zoom auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+        </div>
+        </div>
+
+
+
+
+
+
+      
+    </main><!-- ./ Main -->
+
+    <!-- Footer -->
+    <footer class="container">
+      <small>Built by Transparence</a></small>
+    </footer><!-- ./ Footer -->
+
+    <!-- Minimal theme switcher -->
+    <script src="../js/minimal-theme-switcher.js"></script>
+
+  </body>
+
+</html>
