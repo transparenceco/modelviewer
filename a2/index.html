@@ -21,6 +21,22 @@
     </style>
 </head>
 <body>
-    <model-viewer bounds="tight" src="cubes.glb" camera-controls auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m"></model-viewer>
+    <model-viewer src="cubes.glb" id="orbit-demo" interpolation-decay="200" ></model-viewer>
+    <script>
+        (() => {
+          const modelViewer = document.querySelector('#orbit-demo');
+          const orbitCycle = [
+            '45deg 55deg 4m',
+            '-60deg 110deg 2m',
+            modelViewer.cameraOrbit
+          ];
+        
+          setInterval(() => {
+            const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
+            modelViewer.cameraOrbit =
+                orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
+          }, 3000);
+        })();
+        </script>
 </body>
 </html>
