@@ -17,24 +17,43 @@
 
   <body>
 
+    <model-viewer width="100%" src="cubes.glb" id="orbit-header" interpolation-decay="200" >
+    </model-viewer>
 
-    <!-- Hero -->
-    <div class="hero" data-theme="dark">
+    <script>
+    (() => {
+      const modelViewer = document.querySelector('#orbit-header');
+      const orbitCycle = [
+        '45deg 55deg 4m',
+        '-60deg 110deg 2m',
+        modelViewer.cameraOrbit
+      ];
+    
+      setInterval(() => {
+        const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
+        modelViewer.cameraOrbit =
+            orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
+      }, 3000);
+    })();
+    </script>
+        <!-- Hero -->
+        <div class="hero" data-theme="dark">
 
-      <nav class="container-fluid">
-        <ul>
-          <li><a href="./" class="contrast" onclick="event.preventDefault()"><strong>Transparence</strong></a></li>
-        </ul>
-        <ul>
-        </ul>
-      </nav>
-      <header class="container">
-        <hgroup>
-          <h1>Modelviewer meets Pico CSS</h1>
-          <h2>An experiment bringing 3D to websites with minimal code.</h2>
-        </hgroup>
-      </header>
-    </div><!-- ./ Hero -->
+            <nav class="container-fluid">
+            <ul>
+                <li><a href="./" class="contrast" onclick="event.preventDefault()"><strong>Transparence</strong></a></li>
+            </ul>
+            <ul>
+            </ul>
+            </nav>
+            <header class="container">
+            <hgroup>
+                <h1>Modelviewer meets Pico CSS</h1>
+                <h2>An experiment bringing 3D to websites with minimal code.</h2>
+            </hgroup>
+            </header>
+
+        </div><!-- ./ Hero -->
 
     <!-- Main -->
     <main class="container">

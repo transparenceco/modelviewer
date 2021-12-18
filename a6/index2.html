@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A6</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+</head>
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        HTML, body {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            background-color: #13191e;
+        }
+        model-viewer{
+            height:100vh;
+            width:100vw;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+<model-viewer bounds="tight" src="cubes.glb" camera-controls auto-rotate camera-orbit="0deg 85deg 80%" camera-target="0m 2m 0m">
+
+    <div style="margin:0 10% 0 10%; padding:10% 0 10% 0;">
+        <header>
+            <hgroup>
+                <h1>Hello World</h1>
+                <h4>This is copy on top of 3D graphics.</h4>
+                <p>Using a simple css framework like pico, we can build responsive, good looking pages in no time.</p>
+                <div class="grid">
+                    <div><h4>1. This goes with any title we may have here.</h4></div>
+                    <div><h4>2. Title is also important when it comes to thte second points.</h4></div>
+                    <div><h4>3. Man and machine amalgamate creating the ultimate being</h4></div>
+                  </div>
+            </hgroup>
+        </header>
+        <main>
+
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</model-viewer>
+</body>
+</html>
