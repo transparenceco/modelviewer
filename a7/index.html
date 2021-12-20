@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/pico.min.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- We're incorporating an interesting typing animation utility here -->
+    <script src="https://unpkg.com/typeit@8.0.7/dist/index.umd.js"></script>
+
+    <title>Testing Typeit</title>
+  </head>
+  <body data-theme="light">
+    
+    <nav class="container-fluid">
+      <ul>
+        <li><i data-feather="box"></i></li>
+      </ul>
+      <ul>
+        <li><img src="https://transparence.co/wp-content/uploads/2021/01/Transparence_Logo_white_s-300x71.png" width="200px"/></li>
+      </ul>
+      <ul>
+        <li><i data-feather="message-circle"></i></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <article>
+        <h1 id="typetest"></h1>
+        <footer><button style="border-radius: 50px;">Yes</button></footer>
+      </article>
+    </main>
+
+
+    <footer class="container">
+      <small style="color:darkslategrey">Copyright Transparence 2022.</small>
+    </footer>
+  </body>
+
+  <script>
+    feather.replace()
+  </script>
+  <script>
+    new TypeIt("#typetest", {
+  strings: "Hello, world! <br> I'm using typeit to show content on a page...",
+  speed: 50,
+  loop: false,
+  cursor: true,
+  html: true,
+  lifeLike: true
+}).go();
+  </script>
+</html>
